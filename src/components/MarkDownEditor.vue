@@ -1,40 +1,36 @@
 <template lang="pug">
-  .container
-    .row
-      .col-6.text-primary Hello Vue World with
-      .col-6.text-primary Pug and Bootstrap 
+  .container-flex.p-4
+    .card
+      .card-title
+        h1 Live Markdown Editor
+    .card
+      .card-body
+        .row
+          .col-6
+            b-form-textarea.vh-100(
+              id="textarea"
+              v-model="text"
+              rows="20"
+              placeholder="Enter something...")
+          .col-6.text-left
+            vue-markdown(:source="text", xhtml-out: true)
 </template>
-
 <script>
-//- Create a Markdown editor, like the above, that has the following components:
-
-//- Input area
-//- Compilation logic (you can use a library for this)
-//- Preview panel (no need to do live preview, using a submit button is fine)
-//- Also, you should try to have a good stylesheet for the output HTML (you can use something like Bootstrap, Bulma, etc.)
-
+import VueMarkdown from "vue-markdown"; // production
 export default {
   name: "MarkDownEditor",
-  props: {
-    msg: String
-  }
+  components: {
+    VueMarkdown,
+  },
+  data() {
+    return {
+      text: "The time of **NOW** is :",
+      source: new Date().toLocaleTimeString(),
+      anchorAttrs: {
+        target: "_blank",
+        rel: "noopener noreferrer nofollow"
+      }
+    };
+  },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
