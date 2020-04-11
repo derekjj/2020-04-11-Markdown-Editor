@@ -6,12 +6,19 @@
 </template>
 
 <script>
+//- Create a Markdown editor, like the above, that has the following components:
+
+//- Input area
+//- Compilation logic (you can use a library for this)
+//- Preview panel (no need to do live preview, using a submit button is fine)
+//- Also, you should try to have a good stylesheet for the output HTML (you can use something like Bootstrap, Bulma, etc.)
+
 export default {
-  name: 'HelloWorld',
+  name: "MarkDownEditor",
   props: {
     msg: String
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

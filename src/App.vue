@@ -1,17 +1,15 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<template lang="pug">
+  #app
+    MarkDownEditor
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MarkDownEditor from './components/MarkDownEditor.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MarkDownEditor
   }
 }
 </script>
