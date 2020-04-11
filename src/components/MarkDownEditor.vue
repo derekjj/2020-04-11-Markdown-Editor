@@ -25,11 +25,6 @@ export default {
   data() {
     return {
       text: "The time of **NOW** is :",
-      source: new Date().toLocaleTimeString(),
-      anchorAttrs: {
-        target: "_blank",
-        rel: "noopener noreferrer nofollow"
-      }
     };
   },
 };
